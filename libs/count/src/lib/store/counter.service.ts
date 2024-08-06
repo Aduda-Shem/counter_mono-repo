@@ -22,7 +22,6 @@ export class CounterService {
       })
     );
   }
-
   // Helper function to change number 
   private updat(newValue: number): Observable<void> {
     return from(this.firestore.doc('counters/main').set({ value: newValue }));
