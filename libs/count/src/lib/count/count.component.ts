@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-
 import { CommonModule } from '@angular/common';
 import { CounterQuery } from '../store/counter.query';
 import { CounterService } from '../store/counter.service';
@@ -13,20 +12,27 @@ import { CounterService } from '../store/counter.service';
   styleUrls: ['./count.component.css']
 })
 export class CountComponent implements OnInit {
-  count$: Observable<number>;
+  // Observable --> holds counter value
+  count: Observable<number>;
 
   constructor(
     private countQuery: CounterQuery,
     private countService: CounterService
   ) {
-    this.count$ = this.countQuery.selectCount$;
+    this.count = this.countQuery.selectCount$;
   }
 
   ngOnInit() {
     this.countService.init().subscribe();
   }
 
-  increment() {
-    this.countService.increment().subscribe();
+  // Method to add
+  add() {
+    this.countService.add().subscribe();
+  }
+
+  // Method to subtract
+  subtract() {
+    this.countService.subtract().subscribe();
   }
 }
