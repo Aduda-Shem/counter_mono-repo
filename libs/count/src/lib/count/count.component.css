@@ -22,14 +22,14 @@ body, html {
     font-size: 24px;
   }
   
-  .counter-controls {
+  .contorls {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
   }
   
-  .counter-button {
+  .buttons {
     font-size: 24px;
     width: 50px;
     height: 50px;
@@ -41,15 +41,15 @@ body, html {
     transition: background-color 0.3s, transform 0.1s;
   }
   
-  .counter-button:hover {
+  .buttons:hover {
     background-color: #2980b9;
   }
   
-  .counter-button:active {
+  .buttons:active {
     transform: scale(0.95);
   }
   
-  .counter-value {
+  .data {
     font-size: 32px;
     font-weight: bold;
     color: #333;
