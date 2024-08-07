@@ -1,15 +1,28 @@
-import { Route } from '@angular/router';
+import { PreloadAllModules, Route, RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { NgModule } from '@angular/core';
 
-export const appRoutes: Route[] = [
+const APP_ROUTES: Route[] = [
+  {
+    path: '',
+    loadChildren: () =>
+      import('@angular-monorepo/count').then((m) => m.CountModule),
+  },
   {
     path: 'test',
     component: NxWelcomeComponent,
-    pathMatch: 'full',
-  },
-  {
-    path: '',
-    loadComponent: () =>
-      import('@angular-monorepo/count').then((m) => m.CountComponent),
-  },
+  }
 ];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(APP_ROUTES, {
+      preloadingStrategy: PreloadAllModules,
+      initialNavigation: 'enabledBlocking',
+      enableTracing: true
+    })
+  ],
+  exports: [RouterModule]
+})
+
+export class AppRoutingModule {}

@@ -17,7 +17,8 @@
     "paths": {
       "@angular-monorepo/count": ["libs/count/src/index.ts"],
       "@angular-monorepo/elements": ["libs/elements/src/index.ts"],
-      "@angular-monorepo/features": ["libs/features/src/index.ts"]
+      "@angular-monorepo/features": ["libs/features/src/index.ts"],
+      "@angular-monorepo/state": ["libs/state/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
