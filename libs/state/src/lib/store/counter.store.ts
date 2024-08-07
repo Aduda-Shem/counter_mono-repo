@@ -1,10 +1,20 @@
 import { Injectable } from '@angular/core';
-import { EntityStore, StoreConfig } from '@datorama/akita';
-import { Counter, createInitialState } from './counter.state';
+
+import { Store, StoreConfig } from '@datorama/akita';
+
+export interface Counter {
+  value: number;
+}
+
+export function createInitialState(): Counter {
+  return {
+    value: 0
+  };
+}
 
 @Injectable({ providedIn: 'root' })
 @StoreConfig({ name: 'counter' })
-export class CounterStore extends EntityStore<Counter> {
+export class CounterStore extends Store<Counter> {
   constructor() {
     super(createInitialState());
   }

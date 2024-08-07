@@ -13,13 +13,13 @@ import { CounterQuery, CounterService } from '@angular-monorepo/state';
 })
 export class CountComponent implements OnInit {
   // Observable --> holds counter value
-  // count: Observable<number>;
+  count: Observable<number>;
 
   constructor(
     private countQuery: CounterQuery,
     private countService: CounterService
   ) {
-    // this.count = this.countQuery.selectCount$;
+    this.count = this.countQuery.selectCount$;
   }
 
   ngOnInit() {

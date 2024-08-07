@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
+
 import { Query } from '@datorama/akita';
-import { CounterStore } from './counter.store';
-import { Counter } from './counter.state';
+
+import { CounterStore, Counter } from './counter.store';
 
 @Injectable({ providedIn: 'root' })
-
 export class CounterQuery extends Query<Counter> {
-
   constructor(protected override store: CounterStore) {
     super(store);
   }
 
-  // selectCount$ = this.select('value');
+  selectCount$ = this.select(state => state.value);
 }
-
-
