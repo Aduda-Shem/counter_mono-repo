@@ -1,7 +1,10 @@
 <p>count works!</p>
 
-<!-- <div>
-  <button (click)="subtract()">-</button>
-  <h2>Counter: {{ count | async }}</h2>
-  <button (click)="add()">+</button>
-</div> -->
+<div class="counter-container">
+  <h2>Counter</h2>
+  <div class="counter-controls">
+    <button class="counter-button" (click)="subtract()">-</button>
+    <span class="counter-value">{{ count | async }}</span>
+    <button class="counter-button" (click)="add()">+</button>
+  </div>
+</div>

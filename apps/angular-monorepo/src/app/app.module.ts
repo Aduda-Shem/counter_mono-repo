@@ -10,6 +10,7 @@ import { environment } from '@angular-monorepo/elements';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routes';
+import { CounterModule } from '@angular-monorepo/state';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,9 +19,12 @@ import { AppRoutingModule } from './app.routes';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
+
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
+    CounterModule.forRoot() 
   ],
   bootstrap: [AppComponent]
 })

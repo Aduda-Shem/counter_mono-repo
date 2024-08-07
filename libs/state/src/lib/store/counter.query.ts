@@ -6,9 +6,10 @@ import { CounterStore, Counter } from './counter.store';
 
 @Injectable({ providedIn: 'root' })
 export class CounterQuery extends Query<Counter> {
+  selectCount$: any;
+
   constructor(protected override store: CounterStore) {
     super(store);
+    this.selectCount$ = this.select(state => state.value);
   }
-
-  selectCount$ = this.select(state => state.value);
 }
