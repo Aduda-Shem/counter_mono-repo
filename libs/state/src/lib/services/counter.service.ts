@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { from, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { CounterStore } from './counter.store';
+import { CounterStore } from '../store/counter.store';
 
 @Injectable({ providedIn: 'root' })
 export class CounterService {
